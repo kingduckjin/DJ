@@ -1,0 +1,176 @@
+/* ==================== 헤더 ==================== */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.title-logo span {
+    display: inline-block;
+    text-indent: -9999em;
+}
+
+.title-logo img {
+    width: 150px;
+}
+
+.user-menu {
+    flex: 1;
+    text-align: right;
+}
+
+.user-menu li {
+    display: inline-block;
+    padding: 0 10px;
+    margin-left: 5px;
+}
+
+/* ==================== 헤더 종료 ==================== */
+
+/* ==================== 메뉴 ==================== */
+nav {
+    width: 1280px;
+    text-align: center;
+    margin: 0 auto 50px auto;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-nav li {
+    width: 130px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.main-nav>li {
+    border-bottom: 1px solid #dddddd;
+    width: 132px;
+    padding: 10px 0;
+}
+
+.sub-nav {
+    position: relative;
+}
+
+.sub-nav,
+.sub-nav2 {
+    display: none;
+}
+
+.main-nav li:hover {
+    background-color: #eeeeee;
+}
+
+.main-nav li:hover .sub-nav {
+    display: block;
+    position: absolute;
+    top: 131px;
+}
+
+/* ==================== 서브 메뉴 ==================== */
+.sub-nav {
+    border: 1px solid #dddddd;
+    border-top: none;
+}
+
+.sub-nav>li {
+    color: #333333;
+    padding: 10px 0;
+    position: relative;
+}
+
+.sub-nav>li:not(:last-child) {
+    border-bottom: 1px solid #dddddd;
+}
+
+.sub-nav>li:hover .sub-nav2 {
+    display: block;
+    position: absolute;
+    left: 130px;
+    top: -1px;
+}
+
+/* ==================== 서브 메뉴 종료 ==================== */
+/* ==================== 서브 메뉴 2 ==================== */
+.sub-nav2 {
+    border: 1px solid #dddddd;
+}
+
+.sub-nav2>li {
+    padding: 10px 0;
+}
+
+.sub-nav2>li:not(:last-child) {
+    border-bottom: 1px solid #dddddd;
+}
+
+.sub-nav2>li a {
+    color: #333333;
+}
+
+/* ==================== 서브 메뉴 2 종료 ==================== */
+
+/* ==================== 메뉴 종료 ==================== */
+
+/* ==================== 메인 ==================== */
+
+main {
+    width: 1024px;
+    margin: 0 auto;
+    border-top: 1px solid #666666;
+}
+
+
+.agree h3{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.agree,
+.privacy {
+    line-height: 1.5;
+    height: 513px;
+    background-color: beige;
+    margin: 20px 0;
+    font-size: 1em;
+    padding: 20px;
+    overflow: auto;
+}
+
+.agree p{
+    margin-bottom: 30px;
+}
+
+main h2 {
+    text-align: center;
+}
+
+section {
+    border-top: 1px solid #666666;
+    padding-top: 50px;
+}
+
+
+/* ==================== 메인 종료 ==================== */
+
+
+
+/* ==================== 푸터 ==================== */
+
+footer {
+    line-height: 150px;
+    margin-top: 50px;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+/* ==================== 푸터 종료 ==================== */

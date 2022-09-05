@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: fixed;
+    width: 5vh;
+    height: 5vh;
+    top: calc((100vh - 5vh)/2);
+    left: calc((100% - 5vh)/2);
+    /*수평, 수직 잡기*/
+}
+
+.box {
+    position: absolute;
+    width: calc(5vh * 5);
+    height: calc(5vh * 5);
+    text-align: center;
+    line-height: calc(5vh * 5);
+    /* 유지보수를 위해 calc(5vh * 5) */
+    overflow: hidden;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.b1 {
+    background-color: skyblue;
+    bottom: 0;
+    left: calc((100% - 5vh * 5)/2);
+}
+
+
+.b2 {
+    background-color: yellowgreen;
+    right: 0;
+    z-index: -1;
+}
+
+.b3 {
+    background-color: pink;
+    left: 0;
+}
+
+.b1:hover{
+    z-index: 100;
+}
+
+.b2:hover{
+    z-index: 101;
+}
+
+.b3:hover{
+    z-index: -2;
+}
