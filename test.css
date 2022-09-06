@@ -1,0 +1,89 @@
+/* ==================== 초기화 ==================== */
+* {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* ==================== 전체 레이아웃 ==================== */
+  header,
+  main,
+  footer {
+    width: calc(1024px*.8);
+    margin: 0 auto;
+  }
+  
+  header,
+  footer {
+    line-height: calc(100vh * 0.2);
+  }
+  
+  main {
+    height: 60vh;
+  }
+  
+  /* ==================== 헤더 ==================== */
+  header {
+    background-color: bisque;
+  }
+  
+  /* ==================== 메인 ==================== */
+  main {
+    position: relative;
+  }
+  
+  #section_article {
+    position: absolute;
+    width: 70%;
+  }
+  
+  section h2,
+  article h2 {
+    position: relative;
+  }
+  
+  section h2 {
+    line-height: calc(100vh * .6 * .6);
+    background-color: darkgray;
+  }
+  
+  article h2 {
+    line-height: calc(100vh * .6 * .4);
+    background-color: cadetblue;
+  }
+  
+  section:hover h2,
+  article:hover h2 {
+    left: calc(((1024px * 0.8) - (1024px * 0.8) * 0.7)/2);
+    z-index: 4;
+  }
+  
+  section:hover h2 {
+    top: calc((60vh - 60vh * 0.6)/2);
+  }
+  
+  article:hover h2 {
+    bottom: calc((60vh - 60vh * 0.4)/2);
+  }
+  
+  aside {
+    position: absolute;
+    width: 30%;
+    right: 0;
+  }
+  
+  aside h2 {
+  
+    position: relative;
+    line-height: calc(100vh * 0.6);
+    background-color: burlywood;
+  }
+  
+  aside:hover h2 {
+    left: 100%;
+  }
+  
+  /* ==================== 푸터 ==================== */
+  footer {
+    background-color: antiquewhite;
+  }

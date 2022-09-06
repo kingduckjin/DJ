@@ -1,56 +1,79 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-.container {
-    position: fixed;
-    width: 5vh;
-    height: 5vh;
-    top: calc((100vh - 5vh)/2);
-    left: calc((100% - 5vh)/2);
-    /*수평, 수직 잡기*/
-}
-
-.box {
-    position: absolute;
-    width: calc(5vh * 5);
-    height: calc(5vh * 5);
     text-align: center;
-    line-height: calc(5vh * 5);
-    /* 유지보수를 위해 calc(5vh * 5) */
-    overflow: hidden;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2em;
 }
 
-.b1 {
-    background-color: skyblue;
-    bottom: 0;
-    left: calc((100% - 5vh * 5)/2);
+header,
+main,
+footer {
+    width: calc(1024px * 0.8);
+    margin: 0 auto;
+}
+
+main {
+    height: 60vh;
+    position: relative;
 }
 
 
-.b2 {
-    background-color: yellowgreen;
-    right: 0;
-    z-index: -1;
+
+header,
+footer {
+    background-color: beige;
+    height: 20vh;
+    line-height: calc(100vh * 0.2);
 }
 
-.b3 {
-    background-color: pink;
+/*===================== main =================== */
+
+section,
+article,
+aside {
+    position: absolute;
+}
+
+section {
+    width: 70%;
+    background-color: darkgray;
     left: 0;
+    line-height: calc(60vh * 0.6);
 }
 
-.b1:hover{
-    z-index: 100;
+article {
+    width: 70%;
+    background-color: aquamarine;
+    bottom: 0;
+    line-height: calc(60vh * 0.4);
 }
 
-.b2:hover{
-    z-index: 101;
+aside {
+    background-color: yellowgreen;
+    width: 30%;
+    /* margin-left: 70%; */
+    right: 0;
+    line-height: 60vh;
 }
 
-.b3:hover{
-    z-index: -2;
+/* =============== HOVER ================== */
+
+section:hover {
+    top: calc((60vh * 0.4)/2);
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url(/image/ato.jpg)center/100% no-repeat;
 }
+
+article:hover {
+    bottom: calc((60vh * 0.6)/2);
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+aside:hover {
+    left: 100%;
+}
+
+
