@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  background: url(/image/kall.png);
+  width: 700px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:fixed;
+  top: calc((100vh - 150px)/2);
+  left: calc((100vw - 700px)/2);
+}
+
+.banner div {
+  display: flex;
+  font-size: 75px;
+  font-weight: bold;
+  color: yellowgreen;
+  text-transform: uppercase;
+}
