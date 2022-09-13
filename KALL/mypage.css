@@ -123,20 +123,47 @@ nav {
 
 /* ==================== 메인 ==================== */
 
-main{
+main {
     width: 1280px;
-    border: solid 1px gray;
     margin: 0 auto 50px auto;
 }
 
-main div {
-    border: solid 1px red;
+main>h2 {
+    text-align: center;
 }
 
+main div ul {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+main div {
+    border: solid 3px lightgrey;
+    border-radius: 10px;
+    margin: 50px
+}
 
+main div h3 {
+    padding: 10px;
+}
 
+.mp_info_main .mp_orderlist{
+    height: 100px;
+}
 
+.mp_info_main .mp_order li,
+.mp_info_main .mp_menu li
+ {
+    width: 150px;
+    height: 150px;
+    border: solid 3px rgb(238, 238, 107);
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px;
+    font-size: 1.2em;
+}
 
 
 

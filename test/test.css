@@ -3,22 +3,25 @@
   padding: 0;
 }
 
-.banner {
-  background: url(/image/kall.png);
-  width: 700px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position:fixed;
-  top: calc((100vh - 150px)/2);
-  left: calc((100vw - 700px)/2);
+.BOX {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr) / repeat(10, 1fr);
+  height: 100vh;
+  row-gap: 5px;
 }
 
-.banner div {
-  display: flex;
-  font-size: 75px;
-  font-weight: bold;
-  color: yellowgreen;
-  text-transform: uppercase;
+
+.BOX>div {
+  display: grid;
+  grid-template: 1fr /repeat(10, 1fr);
+  column-gap: 5px;
+}
+
+.BOX>div>div {
+  background-color: gray;
+}
+
+.BOX>div:nth-child(even)>div:nth-child(odd),
+.BOX>div:nth-child(odd)>div:nth-child(even){
+  opacity: .5;
 }
