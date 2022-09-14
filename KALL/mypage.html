@@ -162,45 +162,115 @@
         </ul>
     </nav>
 
-    <main class="mp_info_main">
-        <h2>마이 페이지</h2>
-        <div>
-            <h3>진행 중인 주문</h3>
-            <ul class="mp_orderlist">
-                <li>입금대기</li>
-                <li>결제완료</li>
-                <li>상품준비중</li>
-                <li>배송중</li>
-                <li>배송완료</li>
-                <li>구매확정</li>
-            </ul>
-        </div>
+    <main>
+        <div class="my_page">
+            <h2>MY PAGE</h2>
+            <div class="my_menu">
+                <ul>
+                    <li><a href="">주문내역조회
+                            <span id="">( 0 )</span>
+                        </a></li>
+                    <li><a href="">취소/반품/교환 내역
+                            <span id="">( 0 )</span>
+                        </a></li>
+                </ul>
+                <form action="">
+                    <div class="my_orderlist">
+                        <fieldset>
+                            <div class="oderlist_date">
+                                <select name="order_status" id="order_status">
+                                    <option value="ALL">전체 주문처리상태</option>
+                                    <option value="">입금전</option>
+                                    <option value="">배송준비중</option>
+                                    <option value="">배송중</option>
+                                    <option value="">배송완료</option>
+                                    <option value="">취소</option>
+                                    <option value="">교환</option>
+                                    <option value="">반품</option>
+                                </select>
 
-        <div class="mp_order">
-            <h3>최근 주문 정보</h3>
-            <ul>
-                <li>날짜/주문번호</li>
-                <li>배송일/시간</li>
-                <li>상품명/옵션</li>
-                <li>상품금액/수량</li>
-                <li>주문상태</li>
-                <li>확인/구성</li>
-            </ul>
-        </div>
+                                <span class="oderlist">
+                                    <a href="#none" id="orderday">
+                                        오늘</a>
+                                    <a href="#none" id="orderday">
+                                        7일</a>
+                                    <a href="#none" id="orderday">
+                                        30일</a>
+                                    <a href="#none" id="orderday">
+                                        90일</a>
+                                    <a href="#none" id="orderday">
+                                        180일</a>
+                                </span>
+                                <input type="date" id="s_history_date" name="history_date" size="10" value="today">
+                                <strong>~</strong>
+                                <input type="date" id="e_history_date" name="history_date" size="10" readonly
+                                    value="today">
+                                <a href="#none" id="ordersearch">조회</a>
+                            </div>
 
-        <div class="mp_menu">
-            <h3>MYMENU</h3>
-            <ul>
-                <li>ORDER</li>
-                <li>PROFILE</li>
-                <li>WISHLIST</li>
-                <li>COUPON</li>
-                <li>MILEAGE</li>
-                <li>CART</li>
-                <li>ADDRESS</li>
-                <li>MY Q&A</li>
-                <li>REVIEW</li>
-            </ul>
+                            <ul>
+                                <li>
+                                    기본적으로 최근 3개월간의 자료가 조회되며, 기간 검색시 지난 주문내역을 조회하실 수 있습니다.
+                                </li>
+                                <li>
+                                    주문번호를 클릭하시면 해당 주문에 대한 상세내역을 확인하실 수 있습니다.
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+
+                </form>
+                <div class="my_orderpage">
+                    <div>
+                        <h3>주문상품정보</h3>
+                    </div>
+                    <table>
+                        <caption>주문 상품 정보</caption>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">주문일자<br>[주문번호]</th>
+                                <th scope="col">이미지</th>
+                                <th scope="col">상품정보</th>
+                                <th scope="col">수량</th>
+                                <th scope="col">상품구매금액</th>
+                                <th scope="col">주문처리상태</th>
+                                <th scope="col">취소/교환/반품</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <p class="message">주문 내역이 없습니다.</p>
+                </div>
+
+                <div class="pagemove">
+                    <a href="첫페이지로">
+                        <img src="/image/day/첫페이지.png" alt="첫페이지">
+                    </a>
+                    <a href="이전페이지로">
+                        <img src="/image/day/이전페이지.png" alt="이전페이지">
+                    </a>
+                    <ol>
+                        <li>
+                            <a href="첫페이지로" class="1 페이지로 이동">1</a>
+                        </li>
+                    </ol>
+                    <a href="다음페이지로"><img src="/image/day/다음.png" alt="다음페이지"></a>
+                    <a href="끝페이지로"><img src="/image/day/끝으로.png" alt="끝페이지"></a>
+                </div>
+
+                </fieldset>
+
+            </div>
+
+
         </div>
     </main>
 
