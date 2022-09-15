@@ -1,38 +1,100 @@
-* {
-  margin: 0;
+.box1 {
+  background-color: brown;
 }
 
-#grid_container {
+.box2 {
+  background-color: blueviolet;
+}
+
+.box3 {
+  background-color: blue;
+}
+
+.box4 {
+  background-color: red;
+}
+
+.box5 {
+  background-color: green;
+}
+
+.box6 {
+  background-color: yellowgreen;
+}
+
+.box7 {
+  background-color: black;
+}
+
+.box8 {
+  background-color: coral;
+}
+
+.box9 {
+  background-color: cadetblue;
+}
+
+
+.grid_container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.grid_container {
   display: grid;
-  height: 100vh;
-  grid-template: 1fr 3fr 1fr / repeat(2, 2fr) repeat(2, 1fr);
-  grid-template-areas:
-    "a b . ."
-    "c c d d"
-    ". e e .";
+  height: 300px;
+  grid-template-columns: repeat(3, 100px);
+  grid-auto-rows: 50px;
 }
 
-.logo {
-  background-color: silver;
-  grid-area: a;
+/* ================================================================================= */
+
+/* 행 방향 전체 요소들에 대한 정렬 */
+.grid_container {
+  /* justify-content:start; */
+  /* justify-content:end; */
+  /* justify-content:center; */
+  /* justify-content:space-between; */
+  /* justify-content:space-around; */
+  /* justify-content:space-evenly; */
 }
 
-.menu {
-  background-color: lightblue;
-  grid-area: b;
+/* 행 방향 개별 열그룹에 대한 정렬 */
+.grid_container {
+  /* justify-items: stretch; */
+  /* justify-items: start; */
+  /* justify-items: end; */
+  /* justify-items: center; */
 }
 
-.contents {
-  background-color: lightskyblue;
-  grid-area: c;
+/* 열 방향 전체 요소들에 대한 정렬 */
+.grid_container {
+  /* align-content: start; */
+  /* align-content: end; */
+  /* align-content: center; */
+  /* align-content: space-between; */
+  /* align-content: space-around; */
+  /* align-content: space-evenly; */
 }
 
-.aside {
-  background-color: lavender;
-  grid-area: d;
+/* 열 방향의 개별 행그룹에 대한 정렬 */
+.grid_container {
+  align-items:stretch;
+  align-items:start;
+  align-items:end;
+  align-items:center;
 }
 
-.footer {
-  background-color: lightsteelblue;
-  grid-area: e;
+/* 행 방향 개별 열 요소들에 대한 개별 정렬 */
+.box7,
+.box9 {
+  justify-self: end;
+}
+
+/* 열 방향 개별 행 요소들에 대한 개별 정렬 */
+.box1,
+.box3 {
+  align-self: start;
 }
