@@ -1,30 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>주축 및 교차축에 대한 정렬</title>
+    <link rel="stylesheet" href="./reset.css">
 
-  <link rel="stylesheet" href="/test/test.css">
 </head>
 
 <body>
-  <h1>주축 및 교차축에 대한 정렬</h1>
-  <hr>
+    <!-- 가이드라인 영역  -->
+    <div style="
+			position: relative;
+			display: flex;
+			justify-content: center;
+			width: 100vw;
+			height: 100vh;
+		">
 
-  <div class="grid_container">
-    <div class="box1">1</div>
-    <div class="box2">2</div>
-    <div class="box3">3</div>
-    <div class="box4">4</div>
-    <div class="box5">5</div>
-    <div class="box6">6</div>
-    <div class="box7">7</div>
-    <div class="box8">8</div>
-    <div class="box9">9</div>
-  </div>
+        <div id="guideline" style="
+					position: absolute;
+					max-width:960px; 
+					width: 100%;
+					height: 100%;
+					border-left: 2px solid black; 
+					border-right: 2px solid black; 
+					margin: auto;
+			">
+
+            <div class="container">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+
+        <!-- 실제 컨텐츠 영역  -->
+        <div style="
+				position: absolute;
+				max-width:960px; 
+				width: 100%;
+				height: 100%;
+				margin: auto;
+			">
+            <div style="
+						position: relative;
+						display: flex;
+						margin-left: 20px;
+						margin-right: 20px;
+						height: 100%;
+					">
+                <div style="position: absolute; width: 100%; height: 100%;">
+                    <span style="font-size: 20px; color: blue;">컨테이너 영역에서 마진을 제외한 부분에서만 컨텐츠가 표현됩니다.</span>
+                    <span style="font-size: 20px; color: green;">컨테이너 영역에서 마진을 제외한 부분에서만 컨텐츠가 표현됩니다.</span>
+                    <span style="font-size: 20px; color: red;">컨테이너 영역에서 마진을 제외한 부분에서만 컨텐츠가 표현됩니다.</span>
+                    <span style="font-size: 20px; color: orange;">컨테이너 영역에서 마진을 제외한 부분에서만 컨텐츠가 표현됩니다.</span>
+                    <span style="font-size: 20px; color: purple;">컨테이너 영역에서 마진을 제외한 부분에서만 컨텐츠가 표현됩니다.</span>
+                    <span style="font-size: 20px; color: hotpink;">컨테이너 영역에서 마진을 제외한 부분에서만 컨텐츠가 표현됩니다.</span>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <script>
+        function debug(flag) {
+            if (!flag) {
+                console.log(document.getElementById('guideline').style.display = 'none')
+            } else {
+
+            }
+        }
+
+        // 웹 브라우저에서 화면 구성이 완료되었을 경우
+        window.addEventListener('DOMContentLoaded', function () {
+            debug(true);
+        });
+    </script>
 </body>
 
 </html>
