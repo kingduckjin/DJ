@@ -1,5 +1,6 @@
 'use strict';
 
+document.write('')
 // 배열선언
 const array1 = new Array(5);
 
@@ -81,6 +82,7 @@ for (let i = 0, dj3; i < 5; i++) {
     }
     document.write('<br/>');
 }
+document.write(`<br/>`);
 
 ////////////////////////////////////////////////////////////////////////////
 
@@ -95,7 +97,18 @@ for (let i = 0; i < 5; i++) {
 //2차배열 값 저장
 for (let i = 4; i >= 0; i--) {
     for (let j = 4; j >= 0; j--) {
-
-
+        array4[4 - j][i] = array1[i][j]
     }
+}
+
+//2차배열 값 출력
+for (let i = 0, dj4; i < 5; i++) {
+    for (let j = 0; j < 5; j++) {
+        dj4 = array4[i][j];
+        if (i > j) {
+            document.write('&nbsp;&nbsp;&nbsp;');
+        } else {
+            document.write(`${dj4 / 10 < 1 ? '0' : ''}${dj4} `);
+        }
+    } document.write('<br/>');
 }
