@@ -45,9 +45,10 @@
 let url = 'http://daum.net'
 let step1, step2, step3;
 
+console.log(url.slice(url.lastIndexOf('/')+1))
 step1 = url.slice(url.indexOf('//') + 2);
-step1 = url.split('//')[1];
-console.log(url.split('//'));
+// step1 = url.split('//')[1];
+// console.log(url.split('//'));
 console.log(step1);
 
 step2 = step1.slice(0, step1.indexOf('.'));
