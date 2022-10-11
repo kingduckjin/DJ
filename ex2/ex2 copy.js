@@ -10,9 +10,9 @@
 
   < 조건 >
 
-1> 프로그램 시작 시 "끝말잇기 Start"라는 경고 대화상자가 열리도록 구현.
-2> "처음 한글 세 글자 단어를 입력하세요!!^^" 라는 입력 대화상자가 열리도록 구현.
-3> 2> 입력 과정에서 아무 입력없이 "확인" 버튼을 클릭하거나 단어의 글자 수가 맞지 않으면
+1> 프로그램 시작 시 "끝말잇기 Start"라는 경고 대화상자가 열리도록 구현.                                   
+2> "처음 한글 세 글자 단어를 입력하세요!!^^" 라는 입력 대화상자가 열리도록 구현. 
+3> 2> 입력 과정에서 아무 입력없이 "확인" 버튼을 클릭하거나 단어의 글자 수가 맞지 않으면                    
    "세 글자 단어만 입력하세요~~" 라는 경고 대화상자가 열리도록 한 후 2> 입력 과정이 다시 진행되도록
    구현.
 4> 2> 입력 과정에서 "취소" 버튼을 클릭하면 "정말 종료하시겠습니까?" 라는 "확인/취소" 대화
@@ -39,50 +39,64 @@
    클릭하면 8> 입력 과정이 다시 진행되도록 처리.
 
 */
-let num = 0, preWord, nowWord;
+'use strict';
 
-alert("끝말잇기 start")
-while (1) {
+let beforeword, afterword;
+let cN = 0;
+let endFlag = true; // true 는 계속, false 는 끝
 
-    if (num > 0) {
-        nowWord = prompt(`한글 세 글자 단어를 입력하세요!! 종료하려면 "끝"이라고 입력하세요^^ (이전 단어: ${preWord})(이은 횟수: ${num - 1})`);
-    } else {
-        nowWord = prompt('처음 한글 세 글자 단어를 입력하세요!!^^');
-        if (nowWord != null && nowWord.length == 3) {
-            alert('ok!! 게임시작~~');
-            preWord = nowWord;
-            num++;
-            continue;
-        }
-    }
+alert('끝말잇기 Start!')
 
-    //취소버튼클릭
-    if (nowWord == null) {
+outer:
+for (; endFlag;) {
+    beforeword = prompt('처음 한글 세 글자 단어를 입력하세요');
+
+    if (beforeword === null) {
         if (confirm('정말 종료하시겠습니까?')) {
+            alert('게임종료')
+            break;
+        }
+    } else if (beforeword.length === 3) {
+        alert('Ok 게임시작');
+
+        for (; ;) {
+            afterword = prompt(`한글 세 글자 단어를 입력하세요 !! 종료하려면 "끝"이라고 입력 하세요 (이전단어 : ${beforeword}`);
+
+            if (afterword === null) {
+                if (confirm('정말 종료하시겠습니까?')) {
+                    alert('게임종료!');
+                    endFlag = false;
+                    break outer;
+                }
+
+            } else if (afterword.length === 3) {
+                if (afterword[0] === beforeword[beforeword.length - 1]) {
+                    cN++;
+                    alert('OK Excellent!');
+                    beforeword = afterword;
+                } else {
+                    alert('입력한 글자의 첫말이 이전 단어의 끝말과 달라요.');
+                }
+
+            } else if (afterword === '끝') {
+                if (confirm('정말 끝내시겠습니까?')) {
+                    alert(`${cN}개의 끝말잇기를 성공하셨어요`)
+                    alert('게임종료!')
+                    endFlag = false;
+                    break outer; // 
+                }
+            } else {
+                alert('세 글자 단어만 입력하세요~');
+            }
+
+        }
+        if (endFlag) {
             break;
         }
 
-        //끝 입력
-    } else if (nowWord == "끝") {
-        if (confirm('정말 끝내시겠습니까?')) {
-            alert(`${num - 1}개의 끝말잇기를 성공하셨어요ㅎㅎ`)
-            break;
-        }
-
-        //입력없이 확인 혹은 3글자 안 될 때
-    } else if ((nowWord == "") || (nowWord.length != 3)) {
-        alert('세 글자 단어만 입력하세요~~~');
-
-        //끝말 맞는지 확인
-    } else if (nowWord[0] != preWord[2]) {
-        alert('입력한 단어의 첫말이 이전 단어의 끝말과 달라요~~');
-
-        //모든 조건 통과했을 때
     } else {
-        alert('ok!! Excellent')
-        preWord = nowWord;
-        num++;
+        alert('세 글자 단어만 입력하세요.');
     }
-}
 
-alert('게임 종료!!');
+
+}
