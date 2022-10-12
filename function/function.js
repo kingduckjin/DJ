@@ -1,51 +1,104 @@
-
-//     < 함수 표현식 >
-
-// - 자바스크립트에서 함수는 object에 속하므로 변수에 할당 및 메서의 인수로 전달 또는 리턴값으로 반환등이 가능. 함수 선언과 함수 표현식의 가장 큰 차이점은 함수 선언은 호이스팅(Hoisting)이 되지만, 함수 표현식은 적용되지 않음.
-
-
-// 함수 표현식 형식    :   let 참조변수명 = function [함수명](형식인수) {         
-//                             실행블럭;
-//                             [return 리턴값] or [return]
-//                         };
-
-// - 함수명 지정이 가능하지만 외부에서 함수명을 통한 직접 호출은 불가. 이는 참조변수를 통해 함수명 식별이 가능한 특성을 활용하여 디버깅 용도나 재귀 호출 목적으로 활용.
-
-// ※ 함수 선언와 달리 중괄호 실행블럭 끝에 세미콜론을 표기. 함수 선언이나 함수 표현식 모두 실제 세미콜론 지정 여부와 관계없이 실행되지만 코드 가독성을 위해 구분하는 것을 지향. 
-
-
-
 'use strict';
+{/* < 클로저 (Closuer) >
+    - 도달 가능한 외부변수에 접근이 가능한 함수.
+일반적으로 중첩함수에서 내부함수가 외부함수의 변수를 참조 가능한상태를 의미.js에서는 모든 함수가 클로저로 활용 가능. */}
 
-const namingFunc = function identify() {      // Named function.  
-    console.log('Naming func');
-};
-// function identify() {      // Named function.  
-// console.log('Naming func');
-// } 여기까지가 하나의 객체
+let outer1 = 5;
+// 전역변수는 전역 렉시컬환경객체(Global Lexcial Environment)의 프로퍼티.
 
-namingFunc();
-// console.log(identify());     // 함수 표현식으로 정의되어 있는 함수명을 통한 직접 호출은 불가하지만,
-console.log(namingFunc);        // 참조 변수를 통한 함수명(식별자) 확인은 가능.
-console.log();
+function closure() {
+    console.log(outer1);
+}
+
+// 함수를 기준으로
+// 함수 내의 매개변수나 지역변수를 저장하는 내부 렉시컬 환경객체와
+// 함수 외부의 변수를 참조하는 경우의 외부 렉시컬 환경객체로 구분
+// 동작 방식은 먼저 내부 렉시컬 환경객체에서 변수를 검색 후 존재하지 않으면
+// 외부 렉시컬 환경객체에서 검색하는구조.
+// 따라서 지역변수와 전역변수명이 동일한 경우 지역변수가 참조되는 상황은 이러한 이유.
+
+closure();
+
+console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+{/* <중첩함수 내에서의 외부변소 참조> */ }
+
+function outerFunc() {
+    let outer2 = 10;
+
+    function innerFunc() {
+        console.log(outer2);
+        // 내부 함수인 innerFunc에 대한 내부 렉시컬 환경객체와 
+        // 외부 함수인 outerFunc1에 대한 외부 렉시컬 환경객체로 구분
+    }
+    innerFunc();
+}
+outerFunc();
+
+console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+
+// 함수 내의 지역변수는 호출이 완료되면 소멸되지만, 도달 가능한 상태일 때까지는 그 값을 유지.
+// 즉, 함수의 호출이 끝나면 해당 함수에 대한 렉시컬 환경객체가 소멸되지만, 내부함수가 외부함수의
+// 렉시컬 환경객체(외부변수)를 참조하는 상태에서 반환된 내부함수의 참조를 유지하고 있는 동안은
+// 해당 외부 렉시컬 환경객체는 메모리에서 제거되지않고 유지되는 특성.
+function outerFunc2() {
+    let outer3 = 15;
+
+    // outerFunc2의 지연변수(outer3)는 호출이 완료되면 그 기억공간이 소멸되지만
+    // 내부함수에서 그 값을 참조하여 익명함수로 반환함으로써 그 참조를 통해 외부변수(outer3)에
+    // 도달 가능함으로써 outerFunc2 함수를 호출하여 반환받는 시점 까지도 외부변수(outer3) 기억공간은 유지
+
+    return function () {
+        console.log(outer3);
+    };
+
+}
+outerFunc2()();
+
+console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
 
 
-const sum = function (a, b, c) {              // Anonymous function. 익명함수
-    return a + b + c;
-};
-console.log(sum(1, 2, 3));
-console.log();
+function outerFunc3() {
+    let outer4 = 20;
 
+    return function () {
+        return ++outer4;
+    };
+}
 
-const output = function () {
-    console.log('출력테스트');
-};
+let innerFunc1 = outerFunc3();
 
-const call_output = function (test) {        // 함수의 형식 인수에는 객체나 배열 뿐만 아니라, 
-    test();                                  // 함수의 참조도 전달 가능.
-};
+console.log(innerFunc1());
+console.log(innerFunc1());
+console.log(innerFunc1());
 
-call_output(output);
-call_output(function () {
-    console.log('출력테스트');
-});
+// outerFunc3 함수의 호출이 완료되었지만, 내부함수를 통해
+// 외부지역변수(outer4)에 도달 가능한 상태가 유지되므로
+// 외부지역변수(outer4)는 소멸되지 않고 메모리 유지.
+
+console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+
+innerFunc1 = null;
+// innerFunc1 이 내부함수의 참조를 잃어버림으로써 기존의 렉시컬 환경객체가 소멸됨에 따라 지역변수 또한 소멸.
+
+innerFunc1 = outerFunc3();
+//새로운 렉시컬 환경객체 생성
+console.log(innerFunc1());
+
+console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+
+function outerFunc4() {
+    let outer5 = 25;
+
+    return function () {
+        return ++outer5;
+    };
+}
+
+//두 개의 독립적 렉시컬 환경객체 생성.
+
+let innerFunc2 = outerFunc4(),
+    innerFunc3 = outerFunc4();
+
+console.log(innerFunc2());
+console.log(innerFunc3());
+// 내부함수가 각각 개별적인 지역변수에 접근되는 것을 확인 가능.
