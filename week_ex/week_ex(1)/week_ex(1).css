@@ -1,0 +1,27 @@
+#main_container {
+    width: 500px;
+    height: 540px;
+    background-color: black;
+}
+
+img {
+    width: 500px;
+    height: 500px;
+}
+
+a {
+    border: solid 1px;
+}
+
+div a {
+    width: 30px;
+    height: 30px;
+}
+
+div .nation_container{
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    line-height: 30px;
+    justify-content: center;
+}
