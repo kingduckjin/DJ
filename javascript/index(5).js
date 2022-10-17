@@ -52,7 +52,8 @@ console.log('━━━━━━━━━━━━━━━━━━━━━━�
 console.log(str.indexOf('t'));
 console.log(str.indexOf('t', 5));
 console.log(str.lastIndexOf('t'));
-console.log();
+console.log(str.indexOf('z'));
+console.log('');
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // indexOf 활용 반복되는 문자열 검색.
