@@ -26,62 +26,7 @@
 
 'use strict';
 
-console.log('string'.charAt(5));    // 원시 값에 대한 속성 또는 메서드로 접근시 자동으로 래퍼
-console.log();                      // 객체 생성.
-//                                  // charAt : 인수로 문자열에 대한 인덱스를 지정함으로써
-//                                  //          해당 위치의 문자값 반환.
 
-
-const n1 = new Number('5');   // Number객체의 참조 반환.
-const n2 = Number('5');                           // 함수 호출을 통한 형변환된 값을 직접 반환.
-
-console.log(n1);
-console.log(n2);
-console.log(n1 + 5);    // Number객체(n1)에 대한 산술 연산을 적용하여 자동 언박싱된 number로 
-console.log(n2 + 5);    // 변환되어 연산 처리.
-console.log();
-
-
-console.log(n1 == 5);     // true
-console.log(n2 == 5);     // true
-console.log(n1 === 5);    // false
-console.log(n2 === 5);    // true
-console.log(typeof n1);   // object     // typeof 연산자 : typeof 연산자 우변에 타입 측정
-//                                      //                 대상을 명시함으로써 문자열 형태로
-//                                      //                 타입 정보를 반환.
-console.log(typeof n2);   // number
-
-if (typeof n1 === 'object') {       // typeof 연산자를 활용한 타입체크.
-    console.log('타입 일치');
-} else {
-    console.log('타입 불일치');
-}
-console.log();
-
-
-const n3 = new Number('a');   // 인수 값이 숫자 형태가 아닌 경우에는 NaN 저장.
-const n4 = Number('a');       // 인수 값이 숫자 형태가 아닌 경우에는 NaN 반환.
-
-console.log(n3);
-console.log(n4);
-console.log();
-
-
-/* 숫자 형태의 문자열에 대한 Number함수를 통한 숫자 타입으로 변환 연산. */
-const n5 = '8';
-const n6 = '10';
-
-console.log(n5 + n6);
-console.log(Number(n5) + n6);        // n5는 number타입으로 변환되었지만 문자열(n6)에 대한 
-//                                   // + 연산자에 의해 결과적으로 문자열 결합 연산 적용.
-console.log(Number(n5) + Number(n6)); hg
-console.log();
-
-
-console.log(8 / 0);           // Infinity : 양의 무한대
-console.log(-8 / 0);          // -Infinity : NEGATIVE_INFINITY(음의 무한대)
-console.log('string' / 0);    // NaN : Not-a-Number
-console.log();
 
 
 /*
@@ -100,32 +45,32 @@ console.log(isNaN(NaN));    // isNaN : 인수의 대상이 NaN인지의 여부�
 console.log();
 
 
-console.log(Number(undefined));   // NaN        // undefined는 비교 연산 시 false로 평가되지만
-//                                              // number 형식으로 변환은 불가.
-console.log(Number(null));        // 0
-console.log(Number(true));        // 1
-console.log(Number(false));       // 0
-console.log(Number(false));       // 0
-console.log(Number('  123  '));   // 양쪽 끝의 공백을 제거한 후 변환된 number타입 값으로 반환.
-console.log(Number('  12 3  '));  // 양쪽 끝이 아닌 중간에 공백이나 숫자 형태가 아닌 값이 포함된
-//                                // 경우, 변환에 실패하여 NaN 반환.
-console.log(Number('  '));        // 공백이나 빈 문자열은 0으로 변환하여 반환.
-console.log();
+// console.log(Number(undefined));   // NaN        // undefined는 비교 연산 시 false로 평가되지만
+// //                                              // number 형식으로 변환은 불가.
+// console.log(Number(null));        // 0
+// console.log(Number(true));        // 1
+// console.log(Number(false));       // 0
+// console.log(Number(false));       // 0
+// console.log(Number('  123  '));   // 양쪽 끝의 공백을 제거한 후 변환된 number타입 값으로 반환.
+// console.log(Number('  12 3  '));  // 양쪽 끝이 아닌 중간에 공백이나 숫자 형태가 아닌 값이 포함된
+// //                                // 경우, 변환에 실패하여 NaN 반환.
+// console.log(Number('  '));        // 공백이나 빈 문자열은 0으로 변환하여 반환.
+// console.log();
 
 
-let n7;
-let n8 = null;
-let n9 = true;
+// let n7;
+// let n8 = null;
+// let n9 = true;
 
-console.log(n7 + 5);      // n7은 초기화되지 않았으므로 undefined로 평가되며, undefined는 연산 시
-console.log(n8 + 5);      // 숫자형식으로 변환이 불가하므로 NaN 반환.
-console.log(n9 + 5);
-console.log(' ' + 5);     // 공백은 래퍼 객체를 통한 명시적 변환인 경우에는 0이 반환되지만,
-console.log();            // 이와 같이 연산 시에는 자동 형변환되지 않음.
+// console.log(n7 + 5);      // n7은 초기화되지 않았으므로 undefined로 평가되며, undefined는 연산 시
+// console.log(n8 + 5);      // 숫자형식으로 변환이 불가하므로 NaN 반환.
+// console.log(n9 + 5);
+// console.log(' ' + 5);     // 공백은 래퍼 객체를 통한 명시적 변환인 경우에는 0이 반환되지만,
+// console.log();            // 이와 같이 연산 시에는 자동 형변환되지 않음.
 
 
-const n10 = 4;
-const n11 = 10;
+// const n10 = 4;
+// const n11 = 10;
 
-console.log(String(n10) + String(n11));   // String 래퍼 객체를 통한 문자열 변환.
-console.log(String(n7) + String(n8));     // String 래퍼 객체를 통한 문자열 변환.
+// console.log(String(n10) + String(n11));   // String 래퍼 객체를 통한 문자열 변환.
+// console.log(String(n7) + String(n8));     // String 래퍼 객체를 통한 문자열 변환.
