@@ -1,49 +1,27 @@
-'use strict';
+/* 
+    < use strict >
 
-//예제 2번━━━━━━━(case 1)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-let email = 'qy15@naver.com';
-email = email.replace(email.substring(email.indexOf('@')), '@naver.com');
-console.log(email);
+- 자바스크립트는 기본적으로 별도의 변수 타입을 구분하지 않아 변수 선언 시 let, const, var과
+  같은 구문 생략이 가능한  묵시적 변수 선언이  가능함으로써  유연하고 빠른  프로그래밍이 가능
+  하지만, 이는 프로그램의 안정성 측면에서는 상당한 리스크를 수반.  따라서 프로그램의 안정성과
+  좀 더 나은 성능 향상을 위해서 엄격모드(strict mode) 사용을 권장.
 
-//예제 2번━━━━━━━(case 2)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// let email = prompt('이메일을 입력하시오 : ');
-// email = email.replace(email.slice(email.indexOf('@') + 1), 'naver.com');
-// alert(email);
+*/
+
+// 'use strict';
 
 
-//예제 3번━━━━━━━(case 1)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// 주민번호 입력
-// alert('하이폰(-)을 공백으로 변경하시겠습니까?')
-// alert(rrn)//하이폰 ㅂㅇ
-// alert(rrn)//하이폰 ㅇㅋ
-// let rrn = prompt('주민번호 : ');
+// n2;
 
-// if (rrn.includes('-')) {
 
-//     if (confirm('하이폰(-)을 공백으로 변경하시겠습니까?')) {
-//         rrn = rrn.replace('-', ' ');
-//     }
+function test() {       // 함수의 선언 형식 : function 함수명() {  실행블럭; }
 
-// }
-// alert(rrn);
+    // 'use strict';    // 함수에 이와 같이 지역적으로 엄격모드 선언 가능. 단, 이 때에도 전역적
+    /*                     으로 선언할 때와 마찬가지로 함수의 선두에 선언되어야만 적용.      */
+    n2 = 30;
 
-//예제 4번━━━━━━━(case 1)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// step1 > http:// 제외하고 추출
-// step2 > 닷 부터 표시되는 문자열을 제외하여 추출.
-// step3 > '$'+ 처음 3자리 + 총 글자 수 + url 의 14번째 문자
-// let url = 'http://daum.net'
-// let step1, step2, step3;
+}
 
-// console.log(url.slice(url.lastIndexOf('/')+1))
-// step1 = url.slice(url.indexOf('//') + 2);
-// // step1 = url.split('//')[1];
-// // console.log(url.split('//'));
-// console.log(step1);
-
-// step2 = step1.slice(0, step1.indexOf('.'));
-// step2 = step1.split('.')[0];
-// console.log(step1.split('.'));
-// console.log(step2);
-
-// step3 = `$${step2.slice(0, 3) + step2.length}${url[13] ? url[13] : '?'}`;
-// console.log(step3);
+// console.log(n2);     // 비 엄격모드에서의 묵시적 변수 선언은 함수 외부에서 바로 직접 참조는
+test();                 // 안되지만, 함수 호출을 통해 전역변수처럼 참조 가능.
+console.log(n2);
