@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: gold;
+}
+
+header {
+    display: flex;
+    background-color: silver;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding-bottom: 5px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 2.5px;
+}
+
+.menu a {
+    width: 100px;
+    display: block;
+    text-decoration: none;
+    background-color: darkgreen;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+}
+
+.contents div {
+    width: 305px;
+    display: none;
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+.contents div:target {
+    display: block;
+}
+
+main {
+    margin-top: 200px;
+    padding: 5px;
+}
+
+main p {
+    background-color: coral;
+    padding: 5px;
+}
