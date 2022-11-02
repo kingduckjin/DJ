@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>슬라이드</title>
 
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="./css/teacher.css"> -->
-    <script defer src="./js/index.js"></script>
-    <!-- <script defer src="./js/teacher.js"></script> -->
+    <link rel="stylesheet" href="./css/index.css">
+    <script defer type="module" src="./js/index.js"></script>
 </head>
 
 <body>
@@ -22,10 +20,10 @@
             <li><img src="./image/bg5.jpg" alt="bg5"></li>
         </ul>
 
-        <a class="btn_back nonVisible" href="#">
+        <a class="btn_back nonVisible" data-direction="-1" href="#">
             <img src="./image/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.svg" alt="back_img">
         </a>
-        <a class="btn_foward" href="#">
+        <a class="btn_foward" data-direction="1" href="#">
             <img src="./image/arrow_forward_ios_FILL0_wght400_GRAD0_opsz48.svg" alt="foward_img">
         </a>
     </div>
